@@ -7,17 +7,12 @@ const chalk = require('chalk');
 console.log(chalk.yellow('WineCellar Operator: the back-end service app'));
 
 // The connection string for the IoT Hub service.
-var connectionString = 'HostName=PetersIOTHub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=1fRjAms3Y/U4YUs2HvTLSUyeKxGd0hpSe1Cat8792UQ=';
-var deviceId = 'PetersDevice';
-//var connectionString = '<your iothubowner connection string>';
-//var deviceId = '<your device ID>';
-
+const connectionString = '<your iothubowner connection string>';
+const deviceId = '<your device ID>';
 
 // The sample connects to service-side endpoint to call direct methods on devices.
 var Client = require('azure-iothub').Client;
 var Registry = require('azure-iothub').Registry;
-
-
 
 // Connect to the service-side endpoint on your IoT hub.
 var client = Client.fromConnectionString(connectionString);
