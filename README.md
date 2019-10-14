@@ -1,14 +1,14 @@
 ---
 page_type: sample
 languages:
-- csharp
+- javascript
 products:
-- dotnet
-description: "Add 150 character max description"
-urlFragment: "update-this-to-unique-url-stub"
+- azure-iot-hub
+description: "This sample is the source code created in the Remotely monitor and control devices with IoT Hub Learn module. The scenario is a wine cellar."
+urlFragment: "remotely-monitor-and-control-devices-with-iot-hub"
 ---
 
-# Official Microsoft Sample
+# Remotely monitor and control devices with IoT Hub Learn module
 
 <!-- 
 Guidelines on README format: https://review.docs.microsoft.com/help/onboard/admin/samples/concepts/readme-template?branch=master
@@ -18,7 +18,7 @@ Guidance on onboarding samples to docs.microsoft.com/samples: https://review.doc
 Taxonomies for products and languages: https://review.docs.microsoft.com/new-hope/information-architecture/metadata/taxonomies?branch=master
 -->
 
-Give a short description for your sample here. What does it do and why is it important?
+The sample here provides the source code that is created with the Remotely monitor and control devices with IoT Hub Learn module. This module creates an Azure IoT Hub app, to monitor the temperature and humidty of a wine cellar. A device app, written in Node.js, sends telemetry to the IoT Hub, which uses Device Twins and Direct Method technologies to control the settings of the wine cellar.
 
 ## Contents
 
@@ -26,7 +26,8 @@ Outline the file contents of the repository. It helps users navigate the codebas
 
 | File/folder       | Description                                |
 |-------------------|--------------------------------------------|
-| `src`             | Sample source code.                        |
+| `Device/app.js`   | Sample source code for the device          |
+| `Hub/app.js`      | Sample source code for the back-end service |
 | `.gitignore`      | Define what to ignore at commit time.      |
 | `CHANGELOG.md`    | List of changes to the sample.             |
 | `CONTRIBUTING.md` | Guidelines for contributing to the sample. |
@@ -35,19 +36,19 @@ Outline the file contents of the repository. It helps users navigate the codebas
 
 ## Prerequisites
 
-Outline the required components and tools that a user might need to have on their machine in order to run the sample. This can be anything from frameworks, SDKs, OS versions or IDE releases.
+The student of the module will need familiarity with the Azure IoT Hub portal. The code development can be done using Visual Studio, or Visual Studio Code.
 
 ## Setup
 
-Explain how to prepare the sample once the user clones or downloads the repository. The section should outline every step necessary to install dependencies and set up any settings (for example, API keys and output folders).
+The setup is explained in the text for the module. The module does not require the student to download the code from this location, the code is listed and explained in the Learn module. The code here is a resource if the student needs it.
 
 ## Runnning the sample
 
-Outline step-by-step instructions to execute the sample and see its output. Include steps for executing the sample from the IDE, starting specific services in the Azure portal or anything related to the overall launch of the code.
+Running the sample requires that the student go through all the steps of the Learn module.
 
 ## Key concepts
 
-Provide users with more context on the tools and services used in the sample. Explain some of the code that is being used and how services interact with each other.
+The sample simulates the temperature and humidity of a wine cellar, so showing how to communicate from an external device with an Azure IoT Hub.The sample also includes code for a back-end service, that is used to send desired properties to the remote device, using Azure Device Twins, and to control the device using Direct Methods.
 
 ## Contributing
 
