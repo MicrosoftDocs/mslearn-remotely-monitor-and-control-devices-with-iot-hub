@@ -6,8 +6,7 @@ const chalk = require('chalk');
 console.log(chalk.yellow('WineCellar device app'));
 
 // The device connection string to authenticate the device with your IoT hub.
-var connectionString = 'HostName=PetersIOTHub.azure-devices.net;DeviceId=PetersDevice;SharedAccessKey=O9MRAgElFD2bLU9t4+5fcPGR/zqtAinwOtKdPhVTXQg=';
-// var connectionString = '<your device connection string>';
+const connectionString = '<your device connection string>';
 
 // The sample connects to a device-specific MQTT endpoint on your IoT Hub.
 var Mqtt = require('azure-iot-device-mqtt').Mqtt;
