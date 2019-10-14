@@ -6,31 +6,30 @@ const chalk = require('chalk');
 console.log(chalk.yellow('WineCellar device app'));
 
 // The device connection string to authenticate the device with your IoT hub.
-var connectionString = 'HostName=PetersIOTHub.azure-devices.net;DeviceId=PetersDevice;SharedAccessKey=O9MRAgElFD2bLU9t4+5fcPGR/zqtAinwOtKdPhVTXQg=';
-// var connectionString = '<your device connection string>';
+const connectionString = '<your device connection string>';
 
 // The sample connects to a device-specific MQTT endpoint on your IoT Hub.
-var Mqtt = require('azure-iot-device-mqtt').Mqtt;
-var DeviceClient = require('azure-iot-device').Client
-var Message = require('azure-iot-device').Message;
+const Mqtt = require('azure-iot-device-mqtt').Mqtt;
+const DeviceClient = require('azure-iot-device').Client
+const Message = require('azure-iot-device').Message;
 
-var client = DeviceClient.fromConnectionString(connectionString, Mqtt);
-var deviceTwin;
+const client = DeviceClient.fromConnectionString(connectionString, Mqtt);
+let deviceTwin;
 
 // Wine cellar globals.
 const roomTemperature = 23;                             // Room temperatures vary, but typically are 20 to 25 degrees C.
-var desiredTemperature = 12.77777;                      // Desired temperature for stored wine, in degrees C.
-var desiredTempLimit = 5.5;                             // Acceptable range above or below the desired temp, in degrees C.
-var desiredHumidity = 65;                               // Humidity in relative percentage of air saturation.
-var desiredHumidityLimit = 15;                          // Acceptable range above or below the desired humidity, in percentages.
-var intervalInMilliseconds = 5000;                      // Interval at which telemetry is sent to the cloud.
+let desiredTemperature = 12.77777;                      // Desired temperature for stored wine, in degrees C.
+const desiredTempLimit = 5.5;                             // Acceptable range above or below the desired temp, in degrees C.
+let desiredHumidity = 65;                               // Humidity in relative percentage of air saturation.
+const desiredHumidityLimit = 15;                          // Acceptable range above or below the desired humidity, in percentages.
+const intervalInMilliseconds = 5000;                      // Interval at which telemetry is sent to the cloud.
 
 // Enum for the state of the fan (for cooling and heating), and humidifing.
-var stateEnum = Object.freeze({ "off": "off", "on": "on", "failed": "failed" });
-var fanState = stateEnum.off;
+const stateEnum = Object.freeze({ "off": "off", "on": "on", "failed": "failed" });
+let fanState = stateEnum.off;
 
-var currentTemperature = desiredTemperature;            // Initial setting of temperature.
-var currentHumidity = desiredHumidity;                  // Initial setting of humidity.
+let currentTemperature = desiredTemperature;            // Initial setting of temperature.
+let currentHumidity = desiredHumidity;                  // Initial setting of humidity.
 
 function greenMessage(text) {
     console.log(chalk.green(text));
@@ -83,8 +82,8 @@ function onSetFanState(request, response) {
 function sendMessage() {
 
     // Simulate telemetry.
-    var deltaTemperature = Math.sign(desiredTemperature - currentTemperature);
-    var deltaHumidity = Math.sign(desiredHumidity - currentHumidity);
+    let deltaTemperature = Math.sign(desiredTemperature - currentTemperature);
+    let deltaHumidity = Math.sign(desiredHumidity - currentHumidity);
 
     if (fanState == stateEnum.on) {
 
@@ -106,7 +105,7 @@ function sendMessage() {
     }
 
     // Prepare the telemtry message.
-    var message = new Message(JSON.stringify({
+    const message = new Message(JSON.stringify({
         temperature: currentTemperature.toFixed(2),
         humidity: currentHumidity.toFixed(2),
     }));
@@ -137,7 +136,7 @@ function sendMessage() {
 }
 
 // Create a patch to send to the hub.
-var reportedPropertiesPatch = {
+const reportedPropertiesPatch = {
     firmwareVersion: '1.2.3',
     lastPatchReceivedId: '',
     fanState: '',
