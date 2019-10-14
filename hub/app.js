@@ -11,14 +11,14 @@ const connectionString = '<your iothubowner connection string>';
 const deviceId = '<your device ID>';
 
 // The sample connects to service-side endpoint to call direct methods on devices.
-var Client = require('azure-iothub').Client;
-var Registry = require('azure-iothub').Registry;
+const Client = require('azure-iothub').Client;
+const Registry = require('azure-iothub').Registry;
 
 // Connect to the service-side endpoint on your IoT hub.
-var client = Client.fromConnectionString(connectionString);
+const client = Client.fromConnectionString(connectionString);
 
 // The sample connects to an IoT hub's Event Hubs-compatible endpoint to read messages sent from a device.
-var { EventHubClient, EventPosition } = require('@azure/event-hubs');
+const { EventHubClient, EventPosition } = require('@azure/event-hubs');
 
 function greenMessage(text) {
     console.log(chalk.green(text));
@@ -29,7 +29,7 @@ function redMessage(text) {
 }
 
 // Set the direct method name, payload, and timeout values.
-var methodParams = {
+const methodParams = {
     methodName: 'SetFanState',
     payload: 'on',
     responseTimeoutInSeconds: 30
@@ -48,7 +48,7 @@ function kickOff() {
     });
 }
 
-var printError = function (err) {
+function printError(err) {
     redMessage(err.message);
 };
 
@@ -56,12 +56,12 @@ var printError = function (err) {
 // - Telemetry is sent in the message body.
 // - The device can add arbitrary application properties to the message.
 // - IoT Hub adds system properties, such as Device Id, to the message.
-var printMessage = function (message) {
+function printMessage(message) {
     greenMessage('Telemetry received: ' + JSON.stringify(message.body) + " properties: " + JSON.stringify(message.applicationProperties));
     console.log('');
 };
 
-var eventHubClient;
+let eventHubClient;
 
 // Connect to the partitions on the IoT Hub's Event Hubs-compatible endpoint.
 EventHubClient.createFromIotHubConnectionString(connectionString).then(function (client) {
@@ -78,15 +78,15 @@ EventHubClient.createFromIotHubConnectionString(connectionString).then(function 
 }).catch(printError);
 
 // Locate the device twin via the Registry, then update some tags and properties.
-var registry = Registry.fromConnectionString(connectionString);
+const registry = Registry.fromConnectionString(connectionString);
 
 registry.getTwin(deviceId, function (err, twin) {
     if (err) {
         redMessage(err.constructor.name + ': ' + err.message);
     } else {
-        var desiredTemp = 12;
-        var desiredHumidity = 60;
-        var setDesiredValues = {
+        const desiredTemp = 12;
+        const desiredHumidity = 60;
+        const setDesiredValues = {
             tags: {
                 customerID: 'Customer1',
                 cellar: 'Cellar1'
@@ -111,8 +111,8 @@ registry.getTwin(deviceId, function (err, twin) {
     }
 });
 
-var queryTwins = function () {
-    var query = registry.createQuery("SELECT * FROM devices WHERE tags.cellar = 'Cellar1'", 100);
+function queryTwins() {
+    const query = registry.createQuery("SELECT * FROM devices WHERE tags.cellar = 'Cellar1'", 100);
     query.nextAsTwin(function (err, results) {
         if (err) {
             redMessage('Failed to fetch the results: ' + err.message);
