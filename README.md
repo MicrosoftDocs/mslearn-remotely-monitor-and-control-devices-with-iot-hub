@@ -4,7 +4,7 @@ languages:
 - javascript
 products:
 - azure-iot-hub
-description: "This sample is the source code created in the Remotely monitor and control devices with IoT Hub Learn module. The scenario is a cheese cave."
+description: "This sample is the source code created in the **Remotely monitor and control devices with IoT Hub** Learn module. The scenario is a cheese cave."
 urlFragment: "remotely-monitor-and-control-devices-with-iot-hub"
 ---
 
@@ -18,7 +18,7 @@ Guidance on onboarding samples to docs.microsoft.com/samples: https://review.doc
 Taxonomies for products and languages: https://review.docs.microsoft.com/new-hope/information-architecture/metadata/taxonomies?branch=master
 -->
 
-The sample here provides the source code that is created with the Remotely monitor and control devices with IoT Hub Learn module. This module creates an Azure IoT Hub app, to monitor the temperature and humidty of a cheese cave. A device app, written in Node.js, sends telemetry to the IoT Hub, which uses Device Twins and Direct Method technologies to control the settings of the cheese cave.
+The sample here provides the source code that is created with the **Remotely monitor and control devices with IoT Hub** Learn module. This module creates an Azure IoT Hub app, to monitor the temperature and humidty of a cheese cave. A device app, written in Node.js, sends telemetry to the IoT Hub, which uses _device twins_ and _direct method_ technologies to control the settings of the cheese cave.
 
 ## Contents
 
@@ -46,7 +46,7 @@ Running the sample requires that the student go through all the steps of the Lea
 
 ## Key concepts
 
-The sample simulates the temperature and humidity of a cheese cave, so showing how to communicate from an external device with an Azure IoT Hub.The sample also includes code for a back-end service, that is used to send desired properties to the remote device, using Azure Device Twins, and to control the device using Direct Methods.
+The sample simulates monitoring and controlling the temperature and humidity of a cheese cave. A device app communicates telemetry from  a device to the IoT Hub. The sample also includes code for a back-end service app. This app is used to send desired properties to the remote device. The back-end service utilizes Azure _device twins_ and _direct methods_ technology to perform the synchronization.
 
 ## Contributing
 
