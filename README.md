@@ -4,7 +4,7 @@ languages:
 - javascript
 products:
 - azure-iot-hub
-description: "This sample is the source code created in the Remotely monitor and control devices with IoT Hub Learn module. The scenario is a wine cellar."
+description: "This sample is the source code created in the Remotely monitor and control devices with IoT Hub Learn module. The scenario is a cheese cave."
 urlFragment: "remotely-monitor-and-control-devices-with-iot-hub"
 ---
 
@@ -18,11 +18,9 @@ Guidance on onboarding samples to docs.microsoft.com/samples: https://review.doc
 Taxonomies for products and languages: https://review.docs.microsoft.com/new-hope/information-architecture/metadata/taxonomies?branch=master
 -->
 
-The sample here provides the source code that is created with the Remotely monitor and control devices with IoT Hub Learn module. This module creates an Azure IoT Hub app, to monitor the temperature and humidty of a wine cellar. A device app, written in Node.js, sends telemetry to the IoT Hub, which uses Device Twins and Direct Method technologies to control the settings of the wine cellar.
+The sample here provides the source code that is created with the Remotely monitor and control devices with IoT Hub Learn module. This module creates an Azure IoT Hub app, to monitor the temperature and humidty of a cheese cave. A device app, written in Node.js, sends telemetry to the IoT Hub, which uses Device Twins and Direct Method technologies to control the settings of the cheese cave.
 
 ## Contents
-
-Outline the file contents of the repository. It helps users navigate the codebase, build configuration and any related assets.
 
 | File/folder       | Description                                |
 |-------------------|--------------------------------------------|
@@ -36,7 +34,7 @@ Outline the file contents of the repository. It helps users navigate the codebas
 
 ## Prerequisites
 
-The student of the module will need familiarity with the Azure IoT Hub portal. The code development can be done using Visual Studio, or Visual Studio Code.
+The student of the module will need familiarity with the Azure IoT Hub portal. The code development can be done using Visual Studio, or Visual Studio Code. The code itself is written in Node.js.
 
 ## Setup
 
@@ -48,7 +46,7 @@ Running the sample requires that the student go through all the steps of the Lea
 
 ## Key concepts
 
-The sample simulates the temperature and humidity of a wine cellar, so showing how to communicate from an external device with an Azure IoT Hub.The sample also includes code for a back-end service, that is used to send desired properties to the remote device, using Azure Device Twins, and to control the device using Direct Methods.
+The sample simulates the temperature and humidity of a cheese cave, so showing how to communicate from an external device with an Azure IoT Hub.The sample also includes code for a back-end service, that is used to send desired properties to the remote device, using Azure Device Twins, and to control the device using Direct Methods.
 
 ## Contributing
 
