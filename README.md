@@ -4,7 +4,7 @@ languages:
 - javascript
 products:
 - azure-iot-hub
-description: "This sample is the source code created in the **Remotely monitor and control devices with IoT Hub** Learn module. The scenario is a cheese cave."
+description: "This sample is the source code created in the Remotely monitor and control devices with IoT Hub Learn module. The scenario is a cheese cave."
 urlFragment: "remotely-monitor-and-control-devices-with-iot-hub"
 ---
 
