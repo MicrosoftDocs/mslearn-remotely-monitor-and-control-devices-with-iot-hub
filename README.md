@@ -2,9 +2,10 @@
 page_type: sample
 languages:
 - javascript
+- csharp
 products:
 - azure-iot-hub
-description: "This sample is the source code created in the Remotely monitor and control devices with IoT Hub Learn module. The scenario is a cheese cave."
+description: "This sample is the source code created in the Remotely monitor and control devices with IoT Hub Learn module. The scenario is monitoring and controlling an IoT device in a cheese cave."
 urlFragment: "remotely-monitor-and-control-devices-with-iot-hub"
 ---
 
@@ -24,8 +25,10 @@ The sample here provides the source code that is created with the **Remotely mon
 
 | File/folder       | Description                                |
 |-------------------|--------------------------------------------|
-| `Device/app.js`   | Sample source code for the device          |
-| `Hub/app.js`      | Sample source code for the back-end service |
+| `Device/app.js`   | Sample Node.js source code for the device          |
+| `Hub/app.js`      | Sample Node.js source code for the back-end service |
+| `Device/Program.cs`   | Sample C# source code for the device          |
+| `Hub/Program.cs`      | Sample C# source code for the back-end service |
 | `.gitignore`      | Define what to ignore at commit time.      |
 | `CHANGELOG.md`    | List of changes to the sample.             |
 | `CONTRIBUTING.md` | Guidelines for contributing to the sample. |
@@ -34,7 +37,7 @@ The sample here provides the source code that is created with the **Remotely mon
 
 ## Prerequisites
 
-The student of the module will need familiarity with the Azure IoT Hub portal. The code development can be done using Visual Studio, or Visual Studio Code. The code itself is written in Node.js.
+The student of the module will need familiarity with the Azure IoT Hub portal. The code development can be done using Visual Studio, or Visual Studio Code. The code itself is written in either Node.js, or C#.
 
 ## Setup
 
