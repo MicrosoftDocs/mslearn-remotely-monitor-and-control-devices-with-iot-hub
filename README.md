@@ -43,7 +43,7 @@ The student of the module will need familiarity with the Azure IoT Hub portal. T
 
 The setup is explained in the text for the module. The module does not require the student to download the code from this location, the code is listed and explained in the Learn module. The code here is a resource if the student needs it.
 
-## Runnning the sample
+## Running the sample
 
 Running the sample requires that the student go through all the steps of the Learn module.
 
